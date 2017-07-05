@@ -1,0 +1,25 @@
+{
+  "name": "express_mongo_api",
+  "version": "1.0.0",
+  "description": "Simple project to build an API with Express and MongoDB",
+  "main": "app.js",
+  "author": "Vuong Vu <vuongvu333@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.29",
+    "mongoose": "^4.11.1",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "nodemon": "^1.11.0"
+  }
+}
