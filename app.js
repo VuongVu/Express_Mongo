@@ -6,13 +6,15 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
+const constants = require('./src/constants');
 
 // API Routes
 const users = require('./src/routes/users');
+const cars = require('./src/routes/cars');
 
 // MongoDB connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/mean', { useMongoClient: true }, (err) => {
+mongoose.connect(constants.MONGO_SERVER_URL, { useMongoClient: true }, (err) => {
   if (err) {
     console.log(`Unable to connect to the MongoDB server: ${err}`);
   } else {
@@ -32,6 +34,7 @@ app.use(favicon(path.join(__dirname, 'src', 'assets', 'images', 'favicon.ico')))
 
 // Routes
 app.use('/users', users);
+app.use('/cars', cars);
 
 // Catch 404 Errors and forward them to error handler
 app.use((req, res, next) => {
