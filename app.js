@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
 const constants = require('./src/constants');
 
 // API Routes
@@ -24,6 +25,8 @@ mongoose.connect(constants.MONGO_SERVER_URL, { useMongoClient: true }, (err) => 
 
 // Init express app
 const app = express();
+
+app.use(helmet());
 
 // Middlewares
 app.use(cookieParser('MEN API'));
